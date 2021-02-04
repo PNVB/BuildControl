@@ -76,6 +76,7 @@ header {
             margin-left: 20px;
         }
     }
+
     margin-bottom: 75px;
 }
 
@@ -85,6 +86,7 @@ section#First {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     h1 {
         width: 70%;
         @include stFont (48px, $colorBlack);
@@ -92,25 +94,31 @@ section#First {
         font-weight: 400;
         text-align: center;
     }
+
     .buttons {
         width: 340px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         @include stFont ($font-size: 17px);
+
         .requestButton {
             @include button (#FFF, $colorBlack, 160px, 50px);
             box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
         }
+
         .detailsButton {
             @include button ($colorBlack, #FFF, 150px, 50px);
             border: 1px solid #DADEDF;
         }
+
         margin-bottom: 90px;
     }
+
     .mainPic {
         margin-bottom: 35px;
     }
+
     margin-bottom: 150px;
 }
 
@@ -121,13 +129,14 @@ section#Second {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        
+
         .item {
             width: 80%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             text-align: center;
+
             .icon {
                 margin-bottom: 20px;
             }
@@ -137,12 +146,14 @@ section#Second {
                 line-height: 24px;
                 margin-bottom: 10px;
             }
+
             .description {
                 @include stFont (16px, $colorGray);
                 line-height: 24px;
             }
         }
     }
+
     margin-bottom: 100px;
 }
 
@@ -153,11 +164,13 @@ section#Third {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
     h2 {
         text-align: center;
         @include stFont (32px, $colorBlack);
         margin-bottom: 16px;
     }
+
     h3 {
         margin: 0;
         width: 80%;
@@ -166,16 +179,19 @@ section#Third {
         line-height: 32px;
         margin-bottom: 40px;
     }
+
     margin-bottom: 140px;
 }
 
 section#Fourth {
     margin: 0 auto;
     width: 55%;
+
     h2 {
         text-align: center;
         @include stFont (32px, $colorBlack)
     }
+
     margin-bottom: 160px;
 }
 
@@ -186,25 +202,30 @@ section#Fifth {
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+
     .content {
         width: 550px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+
         .title {
             @include stFont (32px, $colorBlack);
             line-height: 48px;
             margin-bottom: 10px;
         }
+
         .description {
             @include stFont (20px, $colorGray);
             line-height: 32px;
             margin-bottom: 20px;
         }
+
         .subText {
             @include stFont (20px, $colorBlack);
             line-height: 32px;
+
             .background {
                 margin-top: -16px;
                 width: 250px;
@@ -218,25 +239,30 @@ section#Fifth {
 section#Sixth {
     width: 80%;
     margin: 0 auto;
+
     hr {
         border: none;
         background-color: $colorLightGray;
         height: 1px;
         margin: 56px 0px;
     }
+
     .logos {
         display: flex;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
+
         .logo {
             margin-right: 40px;
             transition: transform 0.3s ease-in-out;
         }
+
         .logo:not(:last-child) {
             margin-bottom: 10px;
         }
+
         .logo:hover {
             transform: scale(1.1);
         }
@@ -249,24 +275,32 @@ section#Seventh {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    h3, article {
+
+    h3,
+    article {
         text-align: center;
     }
+
     h3 {
         @include stFont (32px, $colorBlack);
     }
+
     article {
         padding: 0% 20%;
         @include stFont (20px, $colorGray);
         line-height: 32px;
         margin-bottom: 30px;
     }
+
     .blocks {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .block1, .block2, .block3 {
+
+    .block1,
+    .block2,
+    .block3 {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -274,23 +308,28 @@ section#Seventh {
         margin-bottom: 65px;
         width: 80%;
     }
+
     .content {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+
         .title {
             @include stFont (18px, $colorBlack);
             margin-bottom: 20px;
         }
+
         .description {
             @include stFont (16px, $colorGray);
             line-height: 24px;
         }
     }
+
     .image {
         margin: 0 8%;
     }
+
     margin-bottom: 210px;
 }
 
@@ -302,14 +341,19 @@ section#delivery {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+
         .sectionDescription {
             margin: 0 auto;
-            h2, h3 {
+
+            h2,
+            h3 {
                 text-align: center;
             }
+
             h2 {
                 @include stFont (32px, $colorBlack);
             }
+
             h3 {
                 padding: 0 15%;
                 @include stFont (20px, $colorGray);
@@ -317,6 +361,7 @@ section#delivery {
                 margin-bottom: 40px;
             }
         }
+
         .types {
             display: flex;
             flex-direction: row;
@@ -324,38 +369,48 @@ section#delivery {
             justify-content: space-between;
             flex-wrap: wrap;
             width: 90%;
+
             .type {
                 width: 32%;
                 display: flex;
                 flex-direction: row;
                 align-items: flex-start;
                 justify-content: flex-start;
+
                 .icon {
                     margin-right: 15px;
                 }
+
                 .content {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: flex-start;
+
                     .title {
                         @include stFont (18px, $colorBlack);
                         margin-bottom: 10px;
                     }
+
                     .description {
                         @include stFont (16px, $colorGray);
                         line-height: 24px;
                     }
                 }
+
                 margin-bottom: 40px;
             }
         }
+
         .subText {
             line-height: 32px;
+
             span {
                 @include stFont (20px, $colorBlack);
             }
+
             @include stFont (20px, $colorGray);
+
             .background {
                 margin-top: -16px;
                 width: 310px;
@@ -364,5 +419,6 @@ section#delivery {
             }
         }
     }
+
     margin-bottom: 125px;
 }
