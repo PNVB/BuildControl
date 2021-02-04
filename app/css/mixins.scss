@@ -1,0 +1,24 @@
+@mixin stFont ($font-size: 15px, $color: #000, $font: 'Inter') {
+    font-family: $font;
+    font-size: $font-size;
+    color: $color;
+
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin button($color, $backgroundColor, $width: 150px, $height: 50px) {
+    width: $width;
+    height: $height;
+    color: $color;
+    background-color: $backgroundColor;
+    
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
