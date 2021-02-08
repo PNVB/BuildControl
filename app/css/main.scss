@@ -1,11 +1,17 @@
-$fontInter: 'Inter';
-$colorGray: #72787D;
-$colorLightGray: #EEF2F3;
-$colorBlue: #036FC7;
-$colorBlack: #212B31;
+$fontInter: "Inter";
+$colorGray: #72787d;
+$colorLightGray: #eef2f3;
+$colorBlue: #036fc7;
+$colorBlack: #212b31;
 $colorDefault: #000000;
-$colorYellow: #FFD042;
+$colorYellow: #ffd042;
+$colorWhite: #ffffff;
+$color75White: #bfbfbf;
+$colorWhiteGray: #dadedf;
 
+body {
+    margin: 0;
+}
 
 ul {
     li {
@@ -20,11 +26,29 @@ a {
 }
 
 header {
+    z-index: 1000;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    position: sticky;
+    top: 0px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 0 5%;
+    padding: 10px 5%;
+
+    &.sticked {
+        background-color: $colorBlack;
+
+        .logo div,
+        nav ul li a {
+            color: white;
+        }
+
+        .requestButton {
+            @include button($colorBlack, white, 140px, 35px);
+        }
+    }
 
     .logo {
         display: flex;
@@ -37,7 +61,7 @@ header {
 
         div {
             text-transform: uppercase;
-            @include stFont ($font-size: 22px);
+            @include stFont($font-size: 22px);
         }
     }
 
@@ -45,7 +69,7 @@ header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        @include stFont ();
+        @include stFont();
 
         ul {
             display: flex;
@@ -71,7 +95,8 @@ header {
         }
 
         .requestButton {
-            @include button (#FFF, $colorBlack, 140px, 35px);
+            transition: all 0.1s ease-in-out;
+            @include button(#fff, $colorBlack, 140px, 35px);
             box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
             margin-left: 20px;
         }
@@ -89,7 +114,7 @@ section#First {
 
     h1 {
         width: 70%;
-        @include stFont (48px, $colorBlack);
+        @include stFont(48px, $colorBlack);
         font-style: normal;
         font-weight: 400;
         text-align: center;
@@ -100,16 +125,16 @@ section#First {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        @include stFont ($font-size: 17px);
+        @include stFont($font-size: 17px);
 
         .requestButton {
-            @include button (#FFF, $colorBlack, 160px, 50px);
+            @include button(#fff, $colorBlack, 160px, 50px);
             box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
         }
 
         .detailsButton {
-            @include button ($colorBlack, #FFF, 150px, 50px);
-            border: 1px solid #DADEDF;
+            @include button($colorBlack, #fff, 150px, 50px);
+            border: 1px solid $colorWhiteGray;
         }
 
         margin-bottom: 90px;
@@ -142,13 +167,13 @@ section#Second {
             }
 
             .title {
-                @include stFont (18px, $colorBlack);
+                @include stFont(18px, $colorBlack);
                 line-height: 24px;
                 margin-bottom: 10px;
             }
 
             .description {
-                @include stFont (16px, $colorGray);
+                @include stFont(16px, $colorGray);
                 line-height: 24px;
             }
         }
@@ -167,7 +192,7 @@ section#Third {
 
     h2 {
         text-align: center;
-        @include stFont (32px, $colorBlack);
+        @include stFont(32px, $colorBlack);
         margin-bottom: 16px;
     }
 
@@ -175,7 +200,7 @@ section#Third {
         margin: 0;
         width: 80%;
         text-align: center;
-        @include stFont (20px, $colorGray);
+        @include stFont(20px, $colorGray);
         line-height: 32px;
         margin-bottom: 40px;
     }
@@ -189,7 +214,7 @@ section#Fourth {
 
     h2 {
         text-align: center;
-        @include stFont (32px, $colorBlack)
+        @include stFont(32px, $colorBlack);
     }
 
     margin-bottom: 160px;
@@ -211,19 +236,19 @@ section#Fifth {
         align-items: flex-start;
 
         .title {
-            @include stFont (32px, $colorBlack);
+            @include stFont(32px, $colorBlack);
             line-height: 48px;
             margin-bottom: 10px;
         }
 
         .description {
-            @include stFont (20px, $colorGray);
+            @include stFont(20px, $colorGray);
             line-height: 32px;
             margin-bottom: 20px;
         }
 
         .subText {
-            @include stFont (20px, $colorBlack);
+            @include stFont(20px, $colorBlack);
             line-height: 32px;
 
             .background {
@@ -282,12 +307,12 @@ section#Seventh {
     }
 
     h3 {
-        @include stFont (32px, $colorBlack);
+        @include stFont(32px, $colorBlack);
     }
 
     article {
         padding: 0% 20%;
-        @include stFont (20px, $colorGray);
+        @include stFont(20px, $colorGray);
         line-height: 32px;
         margin-bottom: 30px;
     }
@@ -316,12 +341,12 @@ section#Seventh {
         justify-content: flex-start;
 
         .title {
-            @include stFont (18px, $colorBlack);
+            @include stFont(18px, $colorBlack);
             margin-bottom: 20px;
         }
 
         .description {
-            @include stFont (16px, $colorGray);
+            @include stFont(16px, $colorGray);
             line-height: 24px;
         }
     }
@@ -351,12 +376,12 @@ section#delivery {
             }
 
             h2 {
-                @include stFont (32px, $colorBlack);
+                @include stFont(32px, $colorBlack);
             }
 
             h3 {
                 padding: 0 15%;
-                @include stFont (20px, $colorGray);
+                @include stFont(20px, $colorGray);
                 line-height: 32px;
                 margin-bottom: 40px;
             }
@@ -388,12 +413,12 @@ section#delivery {
                     justify-content: flex-start;
 
                     .title {
-                        @include stFont (18px, $colorBlack);
+                        @include stFont(18px, $colorBlack);
                         margin-bottom: 10px;
                     }
 
                     .description {
-                        @include stFont (16px, $colorGray);
+                        @include stFont(16px, $colorGray);
                         line-height: 24px;
                     }
                 }
@@ -406,10 +431,10 @@ section#delivery {
             line-height: 32px;
 
             span {
-                @include stFont (20px, $colorBlack);
+                @include stFont(20px, $colorBlack);
             }
 
-            @include stFont (20px, $colorGray);
+            @include stFont(20px, $colorGray);
 
             .background {
                 margin-top: -16px;
@@ -421,4 +446,615 @@ section#delivery {
     }
 
     margin-bottom: 125px;
+}
+
+section#Ninth {
+    margin: 0 auto;
+
+    .reliability {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        h2 {
+            @include stFont(32px, $colorBlack);
+        }
+    }
+
+    h3 {
+        width: 60%;
+        @include stFont(20px, $colorGray);
+        line-height: 32px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .blocks {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .block {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            .icon {
+                margin-bottom: 20px;
+            }
+
+            .title,
+            .description {
+                text-align: center;
+            }
+
+            .title {
+                @include stFont(18px, $colorBlack);
+                margin-bottom: 10px;
+            }
+
+            .description {
+                @include stFont(16px, $colorGray);
+                line-height: 24px;
+            }
+        }
+    }
+
+    margin-bottom: 140px;
+}
+
+section#Black {
+    background-color: $colorBlack;
+    padding-top: 140px;
+
+    .Black {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .firstBlock {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+            h2 {
+                margin-top: 0px;
+                @include stFont(32px, white);
+                margin-bottom: 50px;
+            }
+
+            .content {
+                margin-left: 15%;
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .dots {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+
+                    .dot {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+
+                        .point {
+                            margin-right: 30px;
+                        }
+
+                        .content {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+
+                            .title {
+                                @include stFont(18px, $colorWhite);
+                                margin-bottom: 10px;
+                            }
+
+                            .description {
+                                @include stFont(16px, $color75White);
+                                line-height: 24px;
+                            }
+                        }
+
+                        margin-bottom: 30px;
+                    }
+
+                    margin-bottom: 10px;
+                }
+
+                .buttons {
+                    width: 340px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    @include stFont($font-size: 17px);
+
+                    .requestButton {
+                        @include button($colorBlack, #fff, 160px, 50px);
+                        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
+                    }
+
+                    .detailsButton {
+                        @include button(#fff, $colorBlack, 150px, 50px);
+                        border: 1px solid $colorWhiteGray;
+                    }
+
+                    margin-bottom: 90px;
+                }
+            }
+
+        }
+
+        .secondBlock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .blocks {
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                .block {
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .icon {
+                        margin-bottom: 20px;
+                    }
+
+                    .title,
+                    .description {
+                        text-align: center;
+                    }
+
+                    .title {
+                        @include stFont(18px, $colorWhite);
+                        margin-bottom: 10px;
+                    }
+
+                    .description {
+                        @include stFont(16px, $color75White);
+                        line-height: 24px;
+                    }
+                }
+            }
+
+            margin-bottom: 100px;
+        }
+    }
+
+    margin-bottom: 100px;
+}
+
+
+section#HowToWorkWith {
+    .HowToWork {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 70%;
+        margin: 0 auto;
+
+        .leftBlock {
+            h2 {
+                margin-top: 0px;
+                @include stFont(32px, $colorBlack);
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                @include stFont(20px, $colorGray);
+                line-height: 32px;
+                margin-bottom: 60px;
+            }
+
+            margin-right: 75px;
+        }
+
+        .rightBlock {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 60%;
+
+            .steps {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .step {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+
+                    .number {
+                        padding: 10px 15px;
+                        @include stFont(16px, $colorGray);
+                        border: 1px solid $colorWhiteGray;
+                        margin-right: 15px;
+                    }
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+
+                        .title {
+                            @include stFont(18px, $colorBlack);
+                            margin-bottom: 10px;
+                        }
+
+                        .description {
+                            @include stFont(16px, $colorGray);
+                            line-height: 24px;
+                        }
+                    }
+
+                    margin-bottom: 40px;
+                }
+            }
+
+            .buttons {
+                width: 340px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                @include stFont($font-size: 17px);
+
+                .requestButton {
+                    @include button(#fff, $colorBlack, 160px, 50px);
+                    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
+                }
+
+                .detailsButton {
+                    @include button($colorBlack, #fff, 150px, 50px);
+                    border: 1px solid $colorWhiteGray;
+                }
+
+                margin-bottom: 90px;
+            }
+        }
+    }
+
+    margin-bottom: 95px;
+}
+
+section#WhyWe {
+    .WhyWe {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        &>.title {
+            text-align: center;
+        }
+    }
+
+    h2 {
+        margin-top: 0px;
+        @include stFont(32px, $colorBlack);
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        @include stFont(20px, $colorGray);
+        line-height: 32px;
+        margin-bottom: 60px;
+    }
+
+    .WhyWe>.content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .leftBlock {
+            width: 60%;
+
+            .benefits {
+                // width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .benefit {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+
+                    .icon {
+                        margin-right: 15px;
+                    }
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+
+                        .title {
+                            @include stFont(18px, $colorBlack);
+                            margin-bottom: 10px;
+                        }
+
+                        .description {
+                            @include stFont(16px, $colorGray);
+                            line-height: 24px;
+                        }
+                    }
+
+                }
+
+                .benefit:not(:last-child) {
+                    margin-bottom: 40px;
+                }
+            }
+
+            margin-right: 130px;
+        }
+
+        .rightBlock {
+            width: 80%;
+
+            .slider {
+                z-index: 100;
+                background-color: #F6F8F9;
+                position: relative;
+                padding: 60px 90px 60px 90px;
+
+                .icon {
+                    z-index: 90;
+                    top: 40px;
+                    left: 40px;
+                    position: absolute;
+                }
+
+                .slide {
+                    position: relative;
+                    z-index: 110;
+
+                    .title {
+                        @include stFont (30px, $colorBlack);
+                        line-height: 48px;
+                        margin-bottom: 30px;
+                    }
+
+                    .author {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+
+                        .photo {
+                            margin-right: 10px;
+                        }
+
+                        .details {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            .name {
+                                @include stFont (16px, $colorBlack);
+                                margin-bottom: 3px;
+                            }
+
+                            .spec {
+                                @include stFont (16px, $colorGray);
+                            }
+                        }
+                    }
+
+                    margin-bottom: 30px;
+                }
+
+                .navigation {
+                    .dots {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+
+                        .dot {
+                            transition: background-color 0.2s ease-in-out;
+                            width: 8px;
+                            height: 8px;
+                            background: rgba(3, 111, 199, 0.2);
+                            border-radius: 8px;
+
+                            margin-right: 8px;
+
+                            &:hover {
+                                background-color: #036FC7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        margin-bottom: 100px;
+    }
+    .awards {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .award {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            .logo {
+                margin-bottom: 30px;
+            }
+            .description {
+                text-align: center;
+                width: 50%;
+                @include stFont (16px, $colorGray);
+            }
+        }
+    }
+    margin-bottom: 130px;
+}
+
+section#AreYouReady {
+    .AreYouReady {
+        margin: 0 auto;
+        padding: 100px 0px;
+        background-image: url('../../images/dest/Rectangle (21).png');
+        background-size: cover;
+        width: 80%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        h2 {
+            text-align: center;
+            width: 80%;
+            margin-top: 0px;
+            @include stFont (48px, $colorBlack);
+            line-height: 64px;
+        }
+        .buttons {
+            width: 400px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include stFont($font-size: 17px);
+    
+            .requestButton {
+                @include button(#fff, $colorBlack, 160px, 50px);
+                box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
+            }
+    
+            .contactButton {
+                @include button($colorBlack, #fff, 200px, 50px);
+                border: 1px solid $colorWhiteGray;
+                font-weight: 500;
+            }
+        }
+    }
+    margin-bottom: 150px;
+}
+
+footer {
+    width: 80%;
+    margin: 0 auto;
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        .contacts, .column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .contacts {
+            .logo {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                .icon {
+                    margin-right: 8px;
+                }
+                .title {
+                    @include stFont (16px, $colorBlack);
+                    text-transform: uppercase;
+                }
+                margin-bottom: 20px;
+            }
+            .adress, .emailTel {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                @include stFont (16px, $colorGray);
+                .city, .email {
+                    margin-bottom: 5px;
+                }
+                margin-bottom: 15px;
+            }
+            .emailTel {
+                .email {
+                    @include stFont (16px, $colorGray);
+                }
+                .tel {
+                    @include stFont (16px, $colorGray);
+                }
+            }
+        }
+        .column {
+            .title {
+                @include stFont (16px, $colorBlack);
+                margin-bottom: 20px;
+            }
+            .option {
+                margin-bottom: 10px;
+                @include stFont (15px, $colorGray);
+            }
+        }
+        margin-bottom: 160px;
+    }
+    hr {
+        border: none;
+        background-color: $colorLightGray;
+        height: 1px;
+        margin: 0px;
+    }
+    .copywrite {
+        margin: 0 auto;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 32px 0px;
+        .rights, .policy {
+            @include stFont (16px, $colorGray);
+        }
+    }
 }
