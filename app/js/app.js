@@ -38,22 +38,43 @@ var tween = gsap.from("#animate", 0.5, {autoAlpha: 0, scale: 0.7});
 
 // change behaviour of controller to animate scroll instead of jump
 controller.scrollTo(function (newpos) {
-    TweenMax.to(window, 0.5, {scrollTo: {y: newpos - 120}});
+    TweenMax.to(window, 0.5, {scrollTo: {y: newpos -60}}); //-120
+});
+
+$(document).on("click", "a[href^='#']", function (e) {
+          if ($(".hamburger").hasClass("is-active")) {
+            $(".hamburger").click();
+        };
 });
 
 //  bind scroll to anchor links
-$(document).on("click", "a[href^='#']", function (e) {
-    var id = $(this).attr("href");
-    if ($(id).length > 0) {
-        e.preventDefault();
+// $(document).on("click", "a[href^='#']", function (e) {
+//     var id = $(this).attr("href");
+//     if ($(id).length > 0) {
+//         e.preventDefault();
 
-        // trigger scroll
-        controller.scrollTo(id);
-        // window.scrollBy(0,-100);
+//         // trigger scroll
+//         controller.scrollTo(id);
+//         // window.scrollBy(0,-100);
+//         if ($(".hamburger").hasClass("is-active")) {
+//             $(".hamburger").click();
+//         };
+//         // if supported by the browser we can even update the URL.
+//         if (window.history && window.history.pushState) {
+//             history.pushState("", document.title, id);
+//         }
+//     }
+// });
 
-        // if supported by the browser we can even update the URL.
-        if (window.history && window.history.pushState) {
-            history.pushState("", document.title, id);
-        }
-    }
-});
+$(".hamburger").on("click", (event) => {
+  event.currentTarget.classList.toggle("is-active");
+  let menu = $("#menuWrapper");
+  menu.slideToggle();
+  // if (menu.hasClass("hidden")) {
+  //   menu.show(500);
+  // }
+  // else {
+  //   menu.hide(500);
+  // }
+  // menu[0].classList.toggle("hidden");
+})

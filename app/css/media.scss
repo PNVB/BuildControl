@@ -1,0 +1,428 @@
+@media (min-width: 1401px) {
+    .hamburgerMenu {
+        display: none;
+    }
+}
+
+@media (max-width: 1400px) {
+    header>.logo,
+    header>nav#desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    section#Seventh {
+        .block {
+            .image img {
+                width: 100%;
+            } 
+        }
+        .block3 {
+            .image img {
+                width: 150%;
+            }
+        }
+    }
+    section#delivery {
+        .delivery {
+            .types {
+                width: 100%;
+            }
+            .subText {
+                .background {
+                    margin-top: -46px;
+                }
+            }
+        }
+    }
+    section#Black {
+        .image {
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    section#WhyWe {
+        .WhyWe {
+            .content {
+                flex-direction: column;
+                .leftBlock {
+                    width: 80%;
+                    margin-right: 0px;
+                    .benefits .benefit {
+                        text-align: center;
+                        align-items: center;
+                        flex-direction: column;
+                        .content {
+                            .title {
+                                width: 100%;
+                            }
+                        }
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        @include stFont(36px, $colorBlack);
+    }
+    h2 {
+        @include stFont(24px, $colorBlack);
+    }
+    section#First {
+        h1 {
+            @include stFont(36px, $colorBlack);
+            width: 100%;
+        }
+    }
+    section#Second {
+        .advantages {
+            flex-direction: column;
+            align-items: center;
+            .item {
+                width: 80%;
+                margin-bottom: 40px;
+            }
+        }
+        margin-bottom: 0px;
+    }
+    section#Third {
+        width: 100%;
+        h2 {
+            @include stFont(24px, $colorBlack);
+        }
+        h3 {
+            @include stFont(16px, $colorGray);
+        }
+    }
+    section#Fourth {
+        width: 80%;
+        h2 {
+            @include stFont(24px, $colorBlack);
+        }
+    }
+    section#Fifth {
+        flex-direction: column;
+        .content {
+            width: 100%;
+            margin-bottom: 40px;
+            .title {
+                @include stFont(24px, $colorBlack);
+            }
+        }
+        .image {
+            text-align: center;
+            img {
+                width: 80%;
+            }
+        }
+    }
+    section#Sixth {
+        .logos {
+            .logo {
+                margin: 30px 0px;
+            }
+        }
+    }
+    section#Seventh {
+        article {
+            padding: 0px;
+        }
+        .blocks {
+            .block {
+                flex-direction: column;
+                align-items: center;
+                .content {
+                    margin-bottom: 30px;
+                }
+                .image {
+                    text-align: center;
+                    img {
+                        width: 60%;
+                    }
+                }
+                &.block2 {
+                    text-align: right;
+                    flex-direction: column-reverse;
+                }
+                margin-bottom: 30px;
+            }
+        }
+    }
+    section#delivery {
+        .delivery {
+            .sectionDescription {
+                h2 {
+                    @include stFont(24px, $colorBlack);
+                }
+                h3 {
+                    padding: 0px;
+                    @include stFont(16px, $colorGray);
+                }
+            }
+            .types {
+                align-items: center;
+                flex-direction: column;
+                .type {
+                    .icon {
+                        margin: 0px;
+                        margin-bottom: 10px;
+                    }
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    .content {
+                        text-align: center;
+                        align-items: center;
+                        flex-direction: column;
+                        .title {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .subText {
+                .background {
+                    margin-top: -78px;
+                }
+            }
+        }
+        margin-bottom: 120px;
+    }
+    section#Ninth {
+        .title h2 {
+            @include stFont(24px, $colorBlack);
+            margin-right: 10px;
+        }
+        h3 {
+            margin-top: 0px;
+            width: 80%;
+            padding: 0px;
+            @include stFont(16px, $colorGray);
+        }
+        .blocks {
+            flex-direction: column;
+            align-items: center;
+            .block {
+                width: 100%;
+                .icon {
+                    margin: 0px;
+                    margin-bottom: 10px;
+                }
+                margin-bottom: 30px;
+            }
+        }
+        margin-bottom: 40px;
+    }
+    section#Black {
+        padding-top: 50px;
+        .Black {
+            .firstBlock {
+                flex-direction: column-reverse;
+                .content {
+                    width: 100%;
+                    margin-left: 0px;
+                    h2 {
+                        width: 100%;
+                        text-align: center;
+                        @include stFont(24px, $colorWhite);
+                        margin-bottom: 30px;
+                    }
+                    .dots {
+                        padding: 0px 20px;
+                    }
+                    .buttons {
+                        align-self: center;
+                        margin-bottom: 60px;
+                    }
+                }
+                .image {
+                    display: none;
+                }
+            }
+            .secondBlock {
+                .blocks {
+                    flex-direction: column;
+                    align-items: center;
+                    .block {
+                        width: 100%;
+                        margin-bottom: 40px;
+                    }
+                }
+                margin-bottom: 30px;
+            }
+        }
+        margin-bottom: 50px;
+    }
+    section#HowToWorkWith {     
+        .HowToWork {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            .leftBlock {
+                h2 {
+                    text-align: center;
+                    @include stFont(24px, $colorBlack);
+                }
+                margin: 0;
+                .image {
+                    text-align: center;
+                    img {
+                        width: 60%;
+                    }
+                }
+                h3 {
+                    text-align: center;
+                    @include stFont(16px, $colorGray);
+                    margin-bottom: 40px;
+                }
+                margin-bottom: 30px;
+            }
+            .rightBlock {
+                width: 100%;
+                .steps {
+                    align-items: center;
+                    .step {
+                        width: 80%;
+                        flex-direction: column;
+                        align-items: center;
+                        .number {
+                            margin: 0px;
+                            margin-bottom: 10px;
+                        }
+                        .content {
+                            text-align: center;
+                            .title {
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .buttons {
+                    align-self: center;
+                }
+            }
+        }
+    }
+    section#WhyWe {
+        .WhyWe {
+            .title {
+                h2 {
+                    @include stFont(24px, $colorBlack);
+                }
+                h3 {
+                    padding: 0px;
+                    @include stFont(16px, $colorGray);
+                    margin-bottom: 30px;
+                }
+            }
+            .content {
+                flex-direction: column;
+                .leftBlock {
+                    width: 100%;
+                    margin: 0px;
+                    .benefits {
+                        .benefit {
+                            flex-direction: column;
+                            align-items: center;
+                            .icon {
+                                margin: 0px;
+                                margin-bottom: 10px;
+                            }
+                            .content {
+                                text-align: center;
+                                .title {
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                            }
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+                .rightBlock {
+                    width: 100%;
+                    .slider {
+                        .icon {
+                            display: none;
+                        }
+                        padding: 30px;
+                        .slide {
+                            .title {
+                                @include stFont(18px, $colorBlack);
+                                line-height: 28px;
+                            }
+                            .author {
+                                .details {
+                                    .name {
+                                        @include stFont(14px, $colorBlack);
+                                    }
+                                    .spec {
+                                        @include stFont(14px, $colorGray);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .awards {
+                .award {
+                    .logo {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+    section#AreYouReady {
+        .AreYouReady {
+            margin: 0px;
+            width: 100%;
+            h2 {
+                @include stFont(26px, $colorBlack);
+                line-height: 40px;
+                font-weight: 500;
+            }
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                div:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        margin-bottom: 50px;
+    }
+    footer {
+        .row {
+            flex-direction: column;
+            .social {
+                display: none;
+            }
+            .column {
+                display: none;
+            }
+            margin-bottom: 20px;
+        }
+        .copywrite {
+            flex-direction: column;
+            .rights, .policy {
+                @include stFont(12px, $colorGray);
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

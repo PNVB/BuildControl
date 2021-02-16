@@ -8,6 +8,7 @@ $colorYellow: #ffd042;
 $colorWhite: #ffffff;
 $color75White: #bfbfbf;
 $colorWhiteGray: #dadedf;
+@import "node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
 body {
     margin: 0;
@@ -36,21 +37,11 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 5%;
+    will-change: display;
 
-    &.sticked {
-        background-color: $colorBlack;
-
-        .logo div,
-        nav ul li a {
-            color: white;
-        }
-
-        .requestButton {
-            @include button($colorBlack, white, 140px, 35px);
-        }
-    }
-
+    
     .logo {
+        z-index: 1100;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -65,7 +56,7 @@ header {
         }
     }
 
-    nav {
+    nav#desktop {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -75,25 +66,25 @@ header {
             display: flex;
             flex-direction: row;
             align-items: center;
-
+            
             li {
                 margin-left: 20px;
 
                 a {
                     transition: color 0.1s ease-in-out;
                     color: $colorGray;
-
+                    
                     &:hover {
                         color: $colorBlue;
                     }
                 }
             }
-
+            
             li:first-child {
                 margin-left: 0px;
             }
         }
-
+        
         .requestButton {
             transition: all 0.1s ease-in-out;
             @include button(#fff, $colorBlack, 140px, 35px);
@@ -101,8 +92,62 @@ header {
             margin-left: 20px;
         }
     }
+    &.sticked {
+        background-color: $colorBlack;
+    
+        .logo div,
+        nav#desktop ul li a {
+            color: white;
+        }
+    
+        nav#desktop .requestButton {
+            @include button($colorBlack, white, 140px, 35px);
+        }
+    
+        .hamburger {
+            .hamburger-inner,
+            .hamburger-inner:before,
+            .hamburger-inner:after {
+                background-color: white;
+            }
+        }
+    }
+    
+    margin-bottom: 0px;
+}
 
-    margin-bottom: 75px;
+.hamburgerMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menuWrapper {
+    background-color: #fff;
+    display: none;
+    width: 100%;
+    position: sticky;
+    padding: 40px 0px;
+    top: 60px;
+    height: 300px;
+}
+
+nav.menu {
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px;
+    }
+    li {
+        @include stFont(20px, $colorBlack);
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 section#First {
@@ -144,7 +189,14 @@ section#First {
         margin-bottom: 35px;
     }
 
-    margin-bottom: 150px;
+    .mainPic, .subPic {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    margin-bottom: 75px;
 }
 
 section#Second {
@@ -156,7 +208,8 @@ section#Second {
         justify-content: space-between;
 
         .item {
-            width: 80%;
+            padding: 0px 3%;
+            width: 33%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -179,7 +232,7 @@ section#Second {
         }
     }
 
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 section#Third {
@@ -205,7 +258,13 @@ section#Third {
         margin-bottom: 40px;
     }
 
-    margin-bottom: 140px;
+    .mainPic {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    margin-bottom: 80px;
 }
 
 section#Fourth {
@@ -217,7 +276,7 @@ section#Fourth {
         @include stFont(32px, $colorBlack);
     }
 
-    margin-bottom: 160px;
+    margin-bottom: 60px;
 }
 
 section#Fifth {
@@ -257,6 +316,12 @@ section#Fifth {
                 height: 16px;
                 background-color: $colorYellow;
             }
+        }
+    }
+    .image {
+        img {
+            max-width: 100%;
+            height: auto;
         }
     }
 }
@@ -307,6 +372,7 @@ section#Seventh {
     }
 
     h3 {
+        margin-top: 0px;
         @include stFont(32px, $colorBlack);
     }
 
@@ -355,7 +421,7 @@ section#Seventh {
         margin: 0 8%;
     }
 
-    margin-bottom: 210px;
+    margin-bottom: 0px;
 }
 
 section#delivery {
@@ -445,7 +511,7 @@ section#delivery {
         }
     }
 
-    margin-bottom: 125px;
+    margin-bottom: 70px;
 }
 
 section#Ninth {
@@ -677,6 +743,13 @@ section#HowToWorkWith {
             }
 
             margin-right: 75px;
+
+            .image {
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
         }
 
         .rightBlock {
@@ -747,8 +820,6 @@ section#HowToWorkWith {
             }
         }
     }
-
-    margin-bottom: 95px;
 }
 
 section#WhyWe {
@@ -931,6 +1002,9 @@ section#WhyWe {
                 width: 50%;
                 @include stFont (16px, $colorGray);
             }
+        }
+        .award:not(:last-child) {
+            margin-bottom: 50px;
         }
     }
     margin-bottom: 130px;

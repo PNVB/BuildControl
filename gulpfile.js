@@ -54,7 +54,8 @@
     function styles() {
         return src([
 			'app/css/mixins.scss',
-			'app/css/main.scss'
+			'app/css/main.scss',
+            'app/css/media.scss'
 			])
         .pipe(concat('app.min.css')) // Конкатенируем в файл app.min.js
         .pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
