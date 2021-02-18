@@ -66,9 +66,58 @@ $(document).on("click", "a[href^='#']", function (e) {
 //     }
 // });
 
+// document.querySelectorAll('a[href^="#"').forEach(link => {
+
+//   link.addEventListener('click', function(e) {
+//       e.preventDefault();
+
+//       let href = this.getAttribute('href').substring(1);
+
+//       const scrollTarget = document.getElementById(href);
+
+//       const topOffset = 100;
+//       // const topOffset = 0; // если не нужен отступ сверху 
+//       const elementPosition = scrollTarget.getBoundingClientRect().top;
+//       const offsetPosition = elementPosition - topOffset;
+
+//       window.scrollBy({
+//           top: offsetPosition,
+//           behavior: 'smooth'
+//       });
+//   });
+// });
+
+
+$(document).on("click", "a[href^='#']", function() {
+
+  let href = $(this).attr('href');
+
+  $('html, body').animate({
+      scrollTop: $(href).offset().top - 100
+    },
+      'smooth'
+  );
+
+  // window.scrollBy({
+  //   top: 100,
+  //   behavior: 'smooth'
+  // });
+  
+  return false;
+});
+
+window.addEventListener("scroll", () => {
+  let button = $(".hamburger");
+  if (button.hasClass("is-active")) {
+    $("#menuWrapper")[0].style.display = "none";
+    button[0].classList.toggle("is-active");
+  }
+});
+
 $(".hamburger").on("click", (event) => {
   event.currentTarget.classList.toggle("is-active");
   let menu = $("#menuWrapper");
+  menu[0].style.top = (window.pageYOffset+50) + "px";
   menu.slideToggle();
   // if (menu.hasClass("hidden")) {
   //   menu.show(500);
